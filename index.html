@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>channel</title>
+    <style>
+      .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        background: #fff;
+      }
+
+      .header h1 {
+        color: #000;
+        font-family: "PT Serif", serif;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: normal;
+        margin-right: 425px;
+      }
+      .frame {
+        background: #f3f3f3;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .frame h1 {
+        color: #222;
+        font-family: "PT Serif", serif;
+        font-size: 60px;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: -1.8px;
+        margin-left: 50px;
+      }
+
+      .frame p {
+        color: #808080;
+        font-family: "SF Pro Display", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 30px;
+        margin-left: 50px;
+      }
+
+      .frame button {
+        display: flex;
+        width: 213px;
+        height: 77px;
+        padding: 17px 28px;
+        justify-content: center;
+        align-items: center;
+        gap: 28px;
+        flex-shrink: 0;
+        background: #eabf9f;
+        border: #eabf9f;
+        margin-left: 50px;
+      }
+
+      button {
+        color: #fff;
+        font-family: SF Pro Display;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.2px;
+        text-transform: uppercase;
+      }
+
+      .subtitle {
+        color: #222;
+        text-align: center;
+        font-family: PT Serif;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -1.44px;
+        margin-top: 90px;
+      }
+      .item {
+        display: flex;
+        gap: 50px;
+        margin-top: 50px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .item-box {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .item-box img {
+        max-width: 100%;
+      }
+
+      .format {
+        width: 263px;
+        height: 48px;
+        flex-shrink: 0;
+        color: #222;
+        font-family: PT Serif;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.9px;
+      }
+
+      .format1 {
+        width: 364px;
+        color: #808080;
+        font-family: SF Pro Display;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px; /* 166.667% */
+      }
+
+      .format2 {
+        color: #666;
+        font-family: PT Serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-decoration-line: strikethrough;
+      }
+
+      .original-price {
+        text-decoration: line-through;
+      }
+
+      .format3 {
+        color: #222;
+        font-family: PT Serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      .new {
+        display: flex;
+        width: 269px;
+        height: 77px;
+        padding: 17px 28px;
+        justify-content: center;
+        align-items: center;
+        gap: 28px;
+        flex-shrink: 0;
+        background: #eabf9f;
+        border: #eabf9f;
+      }
+
+      .new1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 70px;
+      }
+
+      .subtitle1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #222;
+        font-family: PT Serif;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -1.44px;
+        margin-top: 100px;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      .image {
+        width: 560px;
+        height: 460px;
+        flex-shrink: 0;
+        margin: 0 10px;
+        margin-top: 10px;
+      }
+
+      .email {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 445px;
+        background: #eabf9f;
+        flex-shrink: 0;
+        margin-top: 100px;
+      }
+
+      .email h4 {
+        color: #222;
+        font-family: PT Serif;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .rectangle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        width: 945px;
+        height: 100px;
+        flex-shrink: 0;
+        border-radius: 2px;
+        background: #fff;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .rectangle h5 {
+        color: #808080;
+        font-family: SF Pro Display;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        letter-spacing: 0.054px;
+      }
+
+      .rectangle button {
+        display: flex;
+        width: 269px;
+        height: 77px;
+        padding: 17px 28px;
+        justify-content: center;
+        align-items: center;
+        gap: 28px;
+        flex-shrink: 0;
+        background: #eabf9f;
+        border: #eabf9f;
+      }
+      .centered {
+        height: 220px;
+        flex-shrink: 0;
+        text-align: center;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .after-sales-item {
+        display: flex;
+        margin-top: 60px;
+        margin-right: 20px;
+      }
+
+      .after-sales-item svg {
+        margin-right: 30px;
+      }
+
+      .after-sales {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .after-sales-text {
+        color: #000;
+        font-family: PT Serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 132.3%; /* 33.075px */
+      }
+
+      .after-sales-description {
+        color: #808080;
+        font-family: SF Pro Display;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px; /* 166.667% */
+      }
+
+      .content-container {
+        height: 501px;
+        flex-shrink: 0;
+        background: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        position: relative;
+      }
+
+      .section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: auto;
+        margin-top: 100px;
+      }
+
+      .paragraph {
+        color: #000;
+        font-family: PT Serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 132.3%; /* 33.075px */
+      }
+
+      .paragraph1 {
+        color: #808080;
+        font-family: SF Pro Display;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 38px; /* 237.5% */
+      }
+
+      hr {
+        width: 100%;
+        border: none;
+        border-top: 1px solid #858484;
+        position: absolute;
+        bottom: 50px;
+        opacity: 0.5;
+      }
+
+      .image-container {
+        width: 174px;
+        height: 36px;
+        flex-shrink: 0;
+        background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+        position: absolute;
+        bottom: 10px;
+        right: 200px;
+        background: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1>桜丘ファッションカレッジ</h1>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="25"
+        height="25"
+        viewBox="0 0 29 29"
+        fill="none"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M13.1111 24.2223C19.2476 24.2223 24.2223 19.2476 24.2223 13.1111C24.2223 6.97462 19.2476 2 13.1111 2C6.97462 2 2 6.97462 2 13.1111C2 19.2476 6.97462 24.2223 13.1111 24.2223Z"
+          stroke="#141517"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M26.9999 27L20.9583 20.9583"
+          stroke="#141517"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="35.888"
+        height="34.444"
+        viewBox="0 0 36 35"
+        fill="none"
+      >
+        <path
+          d="M11.9992 34.7222C13.5333 34.7222 14.777 33.4786 14.777 31.9444C14.777 30.4103 13.5333 29.1667 11.9992 29.1667C10.4651 29.1667 9.22144 30.4103 9.22144 31.9444C9.22144 33.4786 10.4651 34.7222 11.9992 34.7222Z"
+          fill="black"
+        />
+        <path
+          d="M26.4438 34.7222C27.9779 34.7222 29.2216 33.4786 29.2216 31.9444C29.2216 30.4103 27.9779 29.1667 26.4438 29.1667C24.9097 29.1667 23.666 30.4103 23.666 31.9444C23.666 33.4786 24.9097 34.7222 26.4438 34.7222Z"
+          fill="black"
+        />
+        <path
+          d="M30.3326 14.1667C28.1224 14.1667 26.0028 13.2887 24.44 11.7259C22.8772 10.1631 21.9992 8.04347 21.9992 5.83334H7.23256L6.73256 4.24445C6.67764 4.07384 6.58226 3.91906 6.45456 3.7933C6.32687 3.66754 6.17065 3.57454 5.99923 3.52222L1.44367 2.12222C1.3036 2.07918 1.15641 2.06415 1.01053 2.07798C0.86464 2.09182 0.722907 2.13426 0.593421 2.20287C0.331912 2.34144 0.13616 2.57822 0.0492275 2.86111C-0.0377046 3.14401 -0.00869547 3.44986 0.129873 3.71136C0.268442 3.97287 0.505219 4.16863 0.788117 4.25556L4.77701 5.47778L9.86589 21.5556L8.05478 23.0444L7.91034 23.1889C7.46245 23.7075 7.20869 24.3657 7.19248 25.0507C7.17626 25.7358 7.3986 26.4052 7.82145 26.9444C8.12429 27.3127 8.50913 27.605 8.94516 27.798C9.3812 27.9909 9.85633 28.0791 10.3326 28.0556H28.877C29.1717 28.0556 29.4543 27.9385 29.6627 27.7301C29.8711 27.5217 29.9881 27.2391 29.9881 26.9444C29.9881 26.6498 29.8711 26.3671 29.6627 26.1588C29.4543 25.9504 29.1717 25.8333 28.877 25.8333H10.1548C10.0268 25.829 9.90218 25.7917 9.79285 25.7251C9.68352 25.6584 9.59322 25.5648 9.53067 25.4531C9.46811 25.3414 9.43542 25.2154 9.43576 25.0874C9.43609 24.9594 9.46943 24.8336 9.53256 24.7222L12.2103 22.5H29.3548C29.6086 22.5074 29.8573 22.4276 30.0595 22.274C30.2616 22.1203 30.4051 21.9021 30.4659 21.6556L32.3659 13.8778C31.7026 14.0577 31.0197 14.1547 30.3326 14.1667Z"
+          fill="black"
+        />
+        <path
+          d="M30.3327 11.3889C33.4009 11.3889 35.8882 8.90158 35.8882 5.83333C35.8882 2.76508 33.4009 0.277771 30.3327 0.277771C27.2644 0.277771 24.7771 2.76508 24.7771 5.83333C24.7771 8.90158 27.2644 11.3889 30.3327 11.3889Z"
+          fill="#EABF9F"
+        />
+      </svg>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="35"
+        height="35"
+        viewBox="0 0 36 35"
+        fill="none"
+      >
+        <path
+          d="M30.2315 26.0996C29.5868 24.5724 28.6511 23.1851 27.4766 22.0151C26.3058 20.8418 24.9187 19.9063 23.3922 19.2603C23.3785 19.2534 23.3648 19.25 23.3512 19.2432C25.4806 17.7051 26.8648 15.1997 26.8648 12.373C26.8648 7.69043 23.0709 3.89648 18.3883 3.89648C13.7057 3.89648 9.91171 7.69043 9.91171 12.373C9.91171 15.1997 11.296 17.7051 13.4254 19.2466C13.4117 19.2534 13.398 19.2568 13.3844 19.2637C11.8531 19.9097 10.4791 20.8359 9.29989 22.0186C8.12653 23.1894 7.19102 24.5765 6.54501 26.103C5.91037 27.5975 5.56809 29.1999 5.53671 30.8232C5.53579 30.8597 5.54219 30.896 5.55553 30.93C5.56886 30.964 5.58885 30.9949 5.61434 31.021C5.63982 31.0471 5.67027 31.0679 5.7039 31.0821C5.73753 31.0962 5.77365 31.1035 5.81014 31.1035H7.86093C8.01132 31.1035 8.13094 30.9839 8.13436 30.8369C8.20272 28.1982 9.26229 25.7271 11.1353 23.854C13.0733 21.916 15.6471 20.8496 18.3883 20.8496C21.1295 20.8496 23.7032 21.916 25.6412 23.854C27.5142 25.7271 28.5738 28.1982 28.6422 30.8369C28.6456 30.9873 28.7652 31.1035 28.9156 31.1035H30.9664C31.0029 31.1035 31.039 31.0962 31.0726 31.0821C31.1063 31.0679 31.1367 31.0471 31.1622 31.021C31.1877 30.9949 31.2077 30.964 31.221 30.93C31.2343 30.896 31.2407 30.8597 31.2398 30.8232C31.2057 29.1895 30.8673 27.6001 30.2315 26.0996ZM18.3883 18.252C16.8194 18.252 15.3429 17.6401 14.232 16.5293C13.1212 15.4185 12.5094 13.9419 12.5094 12.373C12.5094 10.8042 13.1212 9.32764 14.232 8.2168C15.3429 7.10596 16.8194 6.49414 18.3883 6.49414C19.9571 6.49414 21.4337 7.10596 22.5445 8.2168C23.6554 9.32764 24.2672 10.8042 24.2672 12.373C24.2672 13.9419 23.6554 15.4185 22.5445 16.5293C21.4337 17.6401 19.9571 18.252 18.3883 18.252Z"
+          fill="black"
+        />
+      </svg>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="34"
+        height="13.5"
+        viewBox="0 0 35 15"
+        fill="none"
+      >
+        <rect
+          x="0.888184"
+          y="0.75"
+          width="34"
+          height="2.89286"
+          fill="#222222"
+        />
+        <rect
+          x="16.8882"
+          y="11.3571"
+          width="18"
+          height="2.89286"
+          fill="#222222"
+        />
+      </svg>
+    </header>
+    <div class="frame">
+      <div>
+        <h1>ファッションの次のレ<br />ベルを想像する</h1>
+        <p>
+          Lorem Ipsumとは、印刷・組版業界のダミーテキストである。ローレム・<br />イプサムは業界の標準である。
+        </p>
+        <button>今すぐ購入</button>
+      </div>
+      <div class="placeholder">
+        <img src="./Placeholder.png" alt="" />
+      </div>
+    </div>
+    <h2 class="subtitle">トレンド商品</h2>
+
+    <div class="item">
+      <div class="item-box">
+        <img src="./image 1.png" alt="" />
+        <span class="format">ローレム・イプサム</span>
+        <span class="format1"
+          >ローレム・イプサムとは、単に印刷や組版のダミーテキストである。</span
+        >
+        <span class="format2"
+          ><span class="original-price">7000円</span>
+          <span class="format3">5000円</span>
+        </span>
+      </div>
+
+      <div class="item-box">
+        <img src="./Rectangle 26.png" alt="" />
+        <span class="format">ローレム・イプサム</span>
+        <span class="format1"
+          >ローレム・イプサムとは、単に印刷や組版のダミーテキストである。</span
+        >
+        <span class="format2"
+          ><span class="original-price">7000円</span>
+          <span class="format3">5000円</span>
+        </span>
+      </div>
+
+      <div class="item-box">
+        <img src="./image 2.png" alt="" />
+        <span class="format">ローレム・イプサム</span>
+        <span class="format1"
+          >ローレム・イプサムとは、単に印刷や組版のダミーテキストである。</span
+        >
+        <span class="format2"
+          ><span class="original-price">7000円</span>
+          <span class="format3">5000円</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- 第二行 -->
+    <div class="item">
+      <div class="item-box">
+        <img src="./image 3.png" alt="" />
+        <span class="format">ローレム・イプサム</span>
+        <span class="format1"
+          >ローレム・イプサムとは、単に印刷や組版のダミーテキストである。</span
+        >
+        <span class="format2"
+          ><span class="original-price">7000円</span>
+          <span class="format3">5000円</span>
+        </span>
+      </div>
+
+      <div class="item-box">
+        <img src="./image 4.png" alt="" />
+        <span class="format">ローレム・イプサム</span>
+        <span class="format1"
+          >ローレム・イプサムとは、単に印刷や組版のダミーテキストである。</span
+        >
+        <span class="format2"
+          ><span class="original-price">7000円</span>
+          <span class="format3">5000円</span>
+        </span>
+      </div>
+
+      <div class="item-box">
+        <img src="./Rectangle 30.png" alt="" />
+        <span class="format">ローレム・イプサム</span>
+        <span class="format1"
+          >ローレム・イプサムとは、単に印刷や組版のダミーテキストである。</span
+        >
+        <span class="format2"
+          ><span class="original-price">7000円</span>
+          <span class="format3">5000円</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="new1">
+      <button class="new">すべての商品を見る</button>
+    </div>
+
+    <h3 class="subtitle1">ショップカテゴリー</h3>
+
+    <div>
+      <div class="container">
+        <img class="image" src="./Card 01.jpg" alt="" />
+        <img class="image" src="./Card 02.jpg" alt="" />
+      </div>
+
+      <div class="container">
+        <img class="image" src="./Card 03.jpg" alt="" />
+        <img class="image" src="./Card 04.jpg" alt="" />
+      </div>
+    </div>
+
+    <div class="email">
+      <h4>登録すると初回注文が10%オフ</h4>
+
+      <div class="rectangle">
+        <h5>Eメールアドレスを入力してください。</h5>
+
+        <button>今すぐ申し込む</button>
+      </div>
+    </div>
+
+    <div class="centered">
+      <div class="after-sales-item">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="42"
+          height="36"
+          viewBox="0 0 42 36"
+          fill="none"
+        >
+          <path
+            d="M35.725 8.27292C35.3538 7.65734 34.8302 7.14781 34.2047 6.79348C33.5792 6.43915 32.873 6.25197 32.1542 6.25H27.0833V2.08333C27.0833 1.5308 26.8638 1.0009 26.4731 0.610195C26.0824 0.219494 25.5525 0 25 0H4.16667C1.86875 0 0 1.86875 0 4.16667V25C0 26.5542 0.866667 27.8979 2.13125 28.6125C2.3875 32.4021 5.52083 35.4167 9.375 35.4167C13.0396 35.4167 16.05 32.6896 16.5604 29.1667H23.0229C23.5333 32.6896 26.5437 35.4167 30.2083 35.4167C33.8729 35.4167 36.8833 32.6896 37.3937 29.1667H37.5C39.7979 29.1667 41.6667 27.2979 41.6667 25V18.75C41.6671 18.3719 41.564 18.0009 41.3687 17.6771L35.725 8.27292ZM27.0833 10.4167H32.1542L35.9042 16.6667H27.0833V10.4167ZM9.375 31.25C7.65208 31.25 6.25 29.8479 6.25 28.125C6.25 26.4021 7.65208 25 9.375 25C11.0979 25 12.5 26.4021 12.5 28.125C12.5 29.8479 11.0979 31.25 9.375 31.25ZM30.2083 31.25C28.4854 31.25 27.0833 29.8479 27.0833 28.125C27.0833 26.4021 28.4854 25 30.2083 25C31.9312 25 33.3333 26.4021 33.3333 28.125C33.3333 29.8479 31.9312 31.25 30.2083 31.25Z"
+            fill="#EABF9F"
+          />
+        </svg>
+        <div class="after-sales">
+          <span class="after-sales-text"> 送料無料 </span>
+          <span class="after-sales-description"
+            >ローレム・イプサムとは、単に印刷<br />や組版のダミーテキストである。</span
+          >
+        </div>
+      </div>
+
+      <div class="after-sales-item">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="42"
+          height="42"
+          viewBox="0 0 42 42"
+          fill="none"
+        >
+          <path
+            d="M20.8333 0C9.34583 0 0 9.34583 0 20.8333V29.4646C0 31.5979 1.86875 33.3333 4.16667 33.3333H6.25C6.80253 33.3333 7.33244 33.1138 7.72314 32.7231C8.11384 32.3324 8.33333 31.8025 8.33333 31.25V20.5354C8.33333 19.9829 8.11384 19.453 7.72314 19.0623C7.33244 18.6716 6.80253 18.4521 6.25 18.4521H4.35833C5.51667 10.3896 12.4542 4.16667 20.8333 4.16667C29.2125 4.16667 36.15 10.3896 37.3083 18.4521H35.4167C34.8641 18.4521 34.3342 18.6716 33.9435 19.0623C33.5528 19.453 33.3333 19.9829 33.3333 20.5354V33.3333C33.3333 35.6312 31.4646 37.5 29.1667 37.5H25V35.4167H16.6667V41.6667H29.1667C33.7625 41.6667 37.5 37.9292 37.5 33.3333C39.7979 33.3333 41.6667 31.5979 41.6667 29.4646V20.8333C41.6667 9.34583 32.3208 0 20.8333 0Z"
+            fill="#EABF9F"
+          />
+        </svg>
+        <div class="after-sales">
+          <span class="after-sales-text"> 24時間365日サポート </span>
+          <span class="after-sales-description"
+            >ローレム・イプサムとは、単に印刷<br />や組版のダミーテキストである。</span
+          >
+        </div>
+      </div>
+
+      <div class="after-sales-item">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="42"
+          height="42"
+          viewBox="0 0 42 42"
+          fill="none"
+        >
+          <path
+            d="M20.8334 33.3333C29.1667 33.3333 31.2501 25 31.2501 25H10.4167C10.4167 25 12.5001 33.3333 20.8334 33.3333Z"
+            fill="#EABF9F"
+          />
+          <path
+            d="M20.8333 41.6667C32.3208 41.6667 41.6667 32.3208 41.6667 20.8333C41.6667 9.34583 32.3208 0 20.8333 0C9.34583 0 0 9.34583 0 20.8333C0 32.3208 9.34583 41.6667 20.8333 41.6667ZM20.8333 4.16667C30.0229 4.16667 37.5 11.6438 37.5 20.8333C37.5 30.0229 30.0229 37.5 20.8333 37.5C11.6438 37.5 4.16667 30.0229 4.16667 20.8333C4.16667 11.6438 11.6438 4.16667 20.8333 4.16667Z"
+            fill="#EABF9F"
+          />
+          <path
+            d="M13.6145 22.1542L17.8854 17.8146C18.1759 17.5242 18.4056 17.1788 18.5612 16.7987C18.7168 16.4186 18.7951 16.0112 18.7916 15.6005C18.7881 15.1898 18.7029 14.7838 18.5408 14.4064C18.3788 14.029 18.1432 13.6876 17.8479 13.4021C17.2789 12.8368 16.5131 12.5136 15.7111 12.5004C14.9091 12.4872 14.1331 12.785 13.5458 13.3313C12.9497 12.792 12.1675 12.5053 11.364 12.5317C10.5606 12.5582 9.79889 12.8956 9.23955 13.473C8.01871 14.723 8.0333 16.6604 9.27913 17.8834L13.6145 22.1542ZM28.1979 22.1542L32.4687 17.8146C32.7592 17.5242 32.9889 17.1788 33.1445 16.7987C33.3001 16.4186 33.3784 16.0112 33.3749 15.6005C33.3715 15.1898 33.2862 14.7838 33.1242 14.4064C32.9622 14.029 32.7266 13.6876 32.4312 13.4021C31.8622 12.8368 31.0964 12.5136 30.2944 12.5004C29.4924 12.4872 28.7164 12.785 28.1291 13.3313C27.5332 12.7911 26.7506 12.5036 25.9467 12.5297C25.1428 12.5557 24.3805 12.8932 23.8208 13.4709C22.6 14.7209 22.6145 16.6584 23.8604 17.8813L28.1979 22.1542Z"
+            fill="#EABF9F"
+          />
+        </svg>
+        <div class="after-sales">
+          <span class="after-sales-text"> 1000人以上の顧客 </span>
+          <span class="after-sales-description"
+            >ローレム・イプサムとは、単に印刷<br />や組版のダミーテキストである。</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="content-container">
+      <div class="section">
+        <p class="paragraph">サイトについて</p>
+        <p class="paragraph1">
+          サイト<br />
+          お客様の声<br />
+          ショップ<br />
+          トレンド<br />
+          商品
+        </p>
+      </div>
+
+      <div class="section">
+        <p class="paragraph">情報</p>
+        <p class="paragraph1">
+          アカウント<br />
+          オーダー<br />
+          カード<br />
+          サポート<br />
+          ポリシー
+        </p>
+      </div>
+
+      <div class="section">
+        <p class="paragraph">カスタマー</p>
+        <p class="paragraph1">
+          返品ポリシー<br />
+          海外からのご注文<br />
+          購入方法<br />
+          コンタクト方法
+        </p>
+      </div>
+
+      <div class="section">
+        <p class="paragraph">サービス</p>
+        <p class="paragraph1">
+          ギフト券<br />
+          学生割引<br />
+          ブログ<br />
+          ご利用条件
+        </p>
+      </div>
+      <hr />
+      <div class="image-container">
+        <img src="./image-removebg-preview (1) 1.png" alt="" />
+      </div>
+    </div>
+  </body>
+</html>
